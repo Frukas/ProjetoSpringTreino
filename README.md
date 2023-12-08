@@ -3,19 +3,23 @@
 
 This is a Spring Boot REST API for managing beneficiaries and their documents.
 
-Endpoints
-Path	Method	Description
-/Benificiario	GET	Get all beneficiaries
-/Benificiario	POST	Add a new beneficiary
-/Benificiario/Documento/{id}	GET	Get documents of a specific beneficiary by their ID
-/Benificiario	PUT	Update a beneficiary and their associated documents
-/Benificiario	DELETE	Delete a beneficiary
-Usage
-Get all beneficiaries
+## Endpoints
+| Path	                        | Method	| Description |
+| :---------------------------- | :-------- |:-------- |
+| `/Benificiario`               | GET	    | Get all beneficiaries |
+| `/Benificiario`               | POST	    | Add a new beneficiary |
+| `/Benificiario/Documento/{id}`|GET	    | Get documents of a specific beneficiary by their ID |
+| `/Benificiario`	            | PUT	    | Update a beneficiary and their associated documents |
+| `/Benificiario`	            | DELETE	| Delete a beneficiary |
+
+## Usage
+### Get all beneficiaries
+```http
 GET /Benificiario
+```
 
 Example response:
-
+```json
 JSON
 [
   {
@@ -32,11 +36,14 @@ JSON
     ]
   }
 ]
-Use o código com cuidado. Saiba mais
-Add a new beneficiary
-POST /Benificiario
-Request body:
+```
 
+### Add a new beneficiary
+```http
+POST /Benificiario
+```
+Request body:
+```json
 JSON
 {
   "nome": "Jane Doe",
@@ -49,17 +56,21 @@ JSON
     }
   ]
 }
-Use o código com cuidado. Saiba mais
+```
+
 Response:
 
 HTTP 200 OK
-Get documents of a specific beneficiary
+
+### Get documents of a specific beneficiary
+```http
 GET /Benificiario/Documento/{id}
+```
 Path parameters:
 
 id: The ID of the beneficiary
 Response:
-
+```json
 JSON
 [
   {
@@ -68,11 +79,14 @@ JSON
     "numeroDocumento": "1234567890"
   }
 ]
-Use o código com cuidado. Saiba mais
-Update a beneficiary and their documents
-PUT /Benificiario
-Request body:
+```
 
+### Update a beneficiary and their documents
+```http
+PUT /Benificiario
+```
+Request body:
+```json
 JSON
 {
   "id": 1,
@@ -93,19 +107,24 @@ JSON
     }
   ]
 }
-Use o código com cuidado. Saiba mais
+```
+
 Response:
 
 HTTP 200 OK
-Delete a beneficiary
-DELETE /Benificiario
-Request body:
 
+### Delete a beneficiary
+```http
+DELETE /Benificiario
+```
+Request body:
+```json
 JSON
 {
   "id": 1
 }
-Use o código com cuidado. Saiba mais
+```
+
 Response:
 
 HTTP 200 OK
